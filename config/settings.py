@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Application definitionsource venv/bin/activate
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -43,6 +43,8 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     #Project apps
     'authentication',
+    'contact',
+    'django_extensions',
 ]
 
 THIRD_PARTY_APPS = [
@@ -133,6 +135,8 @@ JWT_SECRET_KEY = config('JWT_SECRET_KEY', default='your_jwt_secret_key')
 # Django REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        #Should be added to avoid authentication errors when accessing protected endpoints
+        #Shouldmatch the authentication class defined in authentication/backends.py and path
         'authentication.backends.JWTAuthentication',
     ),
 }
@@ -147,4 +151,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+
+#Mailpit
+EMAIL_HOST =config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', default=1025, cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=False, cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')

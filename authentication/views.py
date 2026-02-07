@@ -15,21 +15,7 @@ from rest_framework.decorators import api_view
 from django.shortcuts import render
 # Create your views here.
 
-#Api routes for registration and login
-# @api_view(['GET'])
-# def api_overview(request):
-#     """API Home — shows all available endpoints"""
-#     routes = {
-#         "Register": "/api/auth/register/",
-#         "Login": "/api/auth/login/",
-#         "Password Reset": "/api/auth/password-reset/",
-#         "Password Reset Confirm": "/api/auth/password-reset-confirm/",
-#         "Token Refresh (if using JWT)": "/api/token/refresh/",
-#     }
-#     return Response(routes)
-def api_overview(request):
-    """API Home — clickable links to all endpoints"""
-    return render(request, 'api_overview.html')
+
 
 # Register API
 class RegisterView(GenericAPIView):
