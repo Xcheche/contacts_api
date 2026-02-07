@@ -10,13 +10,13 @@ from django.core.mail import send_mail  # type: ignore
 class ContactList(ListCreateAPIView):
 
     serializer_class = ContactSerializer
-    # permission_classes = [IsAuthenticated,]
+    permission_classes = [IsAuthenticated,]
     
 
 
     def perform_create(self, serializer):
-        #serializer.save(owner=self.request.user)
-        serializer.save()
+        serializer.save(owner=self.request.user)
+        #serializer.save()
         # Send email notification to the user
         send_mail(
             'New Contact Created',

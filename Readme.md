@@ -13,10 +13,10 @@ Each user can create and manage **only their own contacts**.
 ## Demo
 
 - **Contacts CRUD Demo**  
-  ![Contacts CRUD Demo](markdown/img1.png)
+  ![Contacts CRUD Demo](markdown-img/img1.png)
 
 - **API Authentication Demo**  
-  ![API Authentication Demo](markdown/img2.png)
+  ![API Authentication Demo](markdown-img/img2.png)
 
 ## Installation
 
