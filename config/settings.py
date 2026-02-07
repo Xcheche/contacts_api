@@ -50,6 +50,7 @@ PROJECT_APPS = [
 THIRD_PARTY_APPS = [
     #Third party apps
     'rest_framework',
+     'drf_yasg',
   
 ]
 #----- Combine all apps-------------
@@ -130,6 +131,17 @@ USE_TZ = True
 
 #JWT Settings
 JWT_SECRET_KEY = config('JWT_SECRET_KEY', default='your_jwt_secret_key')
+
+#Swagger settings
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        "Auth Token eg [Bearer (JWT) ]": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
 
 
 # Django REST Framework settings

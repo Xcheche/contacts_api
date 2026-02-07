@@ -4,7 +4,7 @@ A simple Django REST API for managing contacts with JWT authentication.
 Each user can create and manage **only their own contacts**.
 
 ## Features
-- JWT-based authentication
+- Custom-Token-based authentication
 - Create & list contacts
 - User-specific data access
 - Email testing with Mailpit
